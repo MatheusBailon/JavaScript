@@ -13,7 +13,7 @@ GAME RULES:
 
 var roundScore, score, activePlayer, gamePlaying, seizao, valUser;
 
-init();ff
+init();
 
 
 /*O comando document.querySelector('#[variavel nomeada por um id]')
