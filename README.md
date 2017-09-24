@@ -1,6 +1,6 @@
 # JavaScript
 
-Desafio. Miniame em JavaScript
+Desafio. Minigame em JavaScript
 
 Desafios (in inglish):
 
