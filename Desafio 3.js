@@ -9,6 +9,21 @@ GAME RULES:
 
 */
 
+/*
+DESAFIO:
+
+1. A player loose his ENTIRE score when he rolls two 6 in a row. After that, it's the next player's turn.
+(Hint: Always save the previuous dice roll in a separate variable)
+2. Add an input field to the HTML where players can set the winnin score, so that they can change the predefined
+score of 100. (Hint: you can read that value with the .value property in JavaScript. This is a good oportunity
+to use google to figure this out :)
+3. Add another dice to the game, so tht there are two dice now. The player looses his current score when one of
+them is a 1. (Hint: you will need CSS to position the second dice, so take a look at the CSS code for the first one.)
+
+
+
+*/
+
 //activePlaye=0 para o primeiro jogador e 1 para o segundo jogador
 
 var roundScore, score, activePlayer, gamePlaying, seizao, valUser;
@@ -34,24 +49,25 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
     if(gamePlaying){
             
         var dice = Math.floor(Math.random() * 6) +1;
-        
+		
         
         dice === 6 ? seizao += dice : seizao = 0;
-        
-        if(seizao === 12){
-            document.getElementById('score-' + activePlayer).textContent = 0
-            nextPlayer();
-        }
+		
         
         var diceDOM = document.querySelector('.dice');
         diceDOM.style.display = 'block';
         diceDOM.src = 'dice-' + dice + '.png';
+		
 
-        if( dice !== 1){
+        if( dice !== 1 && seizao !== 12){
             roundScore += dice;
             document.getElementById('current-' + activePlayer).textContent = roundScore;
 
         } else {
+			
+			//verifica se foi rodado o numero 6 em seguida
+			var zerascore = document.getElementById('score-' + activePlayer);
+			(seizao === 12) ? (zerascore.textContent = 0, score[activePlayer] = 0 ) : seizao = 0;
 
             nextPlayer();
 
@@ -72,7 +88,7 @@ document.querySelector('.btn-hold').addEventListener('click', function(){
         document.getElementById('score-' + activePlayer).textContent = score[activePlayer];
 
 
-        if(score[activePlayer] >= valUser ){
+        if(score[activePlayer] >= 100 ){
 
         document.querySelector('#name-' + activePlayer).textContent = 'Vencedor';
         document.querySelector('.dice').style.display = 'none';
@@ -95,6 +111,7 @@ function nextPlayer (){
     
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
     roundScore = 0;
+	seizao = 0;
         
     document.querySelector('#current-0').textContent = '0';
     document.querySelector('#current-1').textContent = '0';
@@ -115,7 +132,7 @@ function init(){
     gamePlaying = true;
     seizao = 0;
     
-    valUser = document.querySelector('#teste').textContent;
+    valUser = document.querySelector('#name-1').textContent;
     
     document.getElementById('score-0').textContent = 0;
     document.getElementById('score-1').textContent = 0;
@@ -142,8 +159,6 @@ function init(){
 A player looses his ENTIRE score when he rolls two 6 in a row
 
 */
-
-
 
 
 
