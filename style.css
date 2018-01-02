@@ -45,6 +45,21 @@ body {
     padding: 100px;
 }
 
+.form {
+    top: 15%;
+    left: 35%;
+    padding: 2em;
+    padding-bottom: 5em;
+    background-color: #fff;
+    box-shadow: 0px 10px 50px rgba(0,0,0,0.3);
+    position:absolute;
+}
+
+label, input {
+    font-family: Lato;
+    font-size: 20px;
+}
+
 
 
 /**********************************************
@@ -140,11 +155,21 @@ i {
 .btn-new { top: 45px;}
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}
+.btn-send { top: 255px;}
 
 .dice {
     position: absolute;
     left: 50%;
-    top: 178px;
+    top: 118px;
+    transform: translateX(-50%);
+    height: 100px;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+}
+
+.dado {
+    position: absolute;
+    left: 50%;
+    top: 258px;
     transform: translateX(-50%);
     height: 100px;
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);

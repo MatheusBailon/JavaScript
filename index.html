@@ -10,7 +10,27 @@
     </head>
 
     <body>
-        <div class="wrapper clearfix">
+        <div class="form">
+            
+            <div>
+                <label for="nomear-0">Informe o nome do primeiro Jogador:</label><br>
+                <input type="text" value="" id="nomear-0" placeholder="Player 1"/><br><br>
+            </div>
+            <div>
+                <label for="nomear-1">Informe o nome do segundo Jogador:</label><br>
+                <input type="text" value="" id="nomear-1" placeholder="Player 2" /><br><br>
+            </div>
+            <div>
+                <label for="valorToWin">Valor para ganhar:</label><br>
+                <input type="number" value="" id="valorToWin" placeholder="Ex: 100"/>
+            </div>
+            <div>
+                <button type="button" class="btn-send"><i class="ion-android-send"></i>Enviar
+                </button>
+        </div>
+            
+        </div>
+        <div class="wrapper clearfix" style="display: none;">
             <div class="player-0-panel active">
                 <div class="player-name" id="name-0">Player 1</div>
                 <div class="player-score" id="score-0">43</div>
@@ -34,6 +54,7 @@
             <button class="btn-hold"><i class="ion-ios-download-outline"></i>Atualizar</button>
             
             <img src="dice-5.png" alt="Dice" class="dice">
+            <img src="dado-2.png" alt="Dado" class="dado">
         </div>
         
         <script src="Desafio 3.js"></script>
