@@ -67,7 +67,8 @@ document.querySelector('.btn-roll').addEventListener('click', function(){
 function dado(diceName){
     
     var dice = Math.floor(Math.random() * 6) +1;
-
+    
+    
     dice === 6 ? seizao += 6 : seizao = 0;
 
 
@@ -97,6 +98,7 @@ document.querySelector('.btn-hold').addEventListener('click', function(){
 
         document.querySelector('#name-' + activePlayer).textContent = 'Vencedor';
         document.querySelector('.dice').style.display = 'none';
+        document.querySelector('.dado').style.display = 'none';
         document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
         document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
         gamePlaying = false;    
